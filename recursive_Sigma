@@ -1,0 +1,19 @@
+/* The rSigma recursive function takes an integer argument 'val' that 
+that returns a sum of integers from 1 to the 'val'. */
+var sum = 0; 
+
+function rSigma( val ) {
+	//if parameter for val is a decimal value
+	//round it to down to the nearest whole number
+	var val = Math.floor(val);
+	sum += val;
+	// base case
+	if ( val === 0 ) {	
+		return sum;
+	}
+	// recursive case (forward progress)
+	return rSigma( val - 1 ); 
+};
+
+var number = rSigma(5.6);
+console.log(number);

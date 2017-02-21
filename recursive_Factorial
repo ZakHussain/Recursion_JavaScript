@@ -1,0 +1,28 @@
+/*the recursive rFactorial function takes an integer argument 'num' and returns the 
+num factorial (num!). Another way to think about this is, it returns the product of 
+the integer values from 1 to the numth value*/
+var product = 1; 
+
+function rFactorial( num ) {
+	var num = Math.floor(num);
+	//if parameter for val is a decimal value
+	//round it to down to the nearest whole number 
+	product *= num; 
+	//if number is less than zero treat as zero
+	if ( num < 0 ) {
+		return 0;
+	// if number is equal to 0, 0! = 1; 
+	} else if ( num === 0) {
+		return 1; 
+	// for num < 0, this will act as the 
+	// base case that will return the product 
+	// of the fatorial 	
+	} else if ( num === 1 ) {
+		return product; 
+	}
+	// recursive case (forward progress)
+	return rFactorial( num - 1 ); 		
+};
+
+var number = rFactorial(3.5); 
+console.log(number);
